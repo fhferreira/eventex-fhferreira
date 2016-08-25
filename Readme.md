@@ -7,7 +7,6 @@ https://eventex-fhferreira.herokuapp.com/
 
 Heroku
 ---
-
 heroku login
 heroku apps:create eventex-fhferreira
 heroku plugins:install heroku-config
