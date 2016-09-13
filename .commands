@@ -59,3 +59,11 @@ $pip install psycopg2 <- para instalar esse plugin, tenha certeza que vc instalo
 
 15 - Salve os requirements da aplicação, este arquivo dever ser criado dentro da pasta wttd.
 $ pip freeze > requirements.txt
+
+
+
+==
+Sendgrid
+user: eventex-fhferreira
+senha: senha123
+heroku config:set EMAIL_HOST="smtp.sendgrid.net" EMAIL_HOST_USER="eventex-fhferreira" EMAIL_HOST_PASSWORD="senha123" EMAIL_PORT="587" EMAIL_USE_TLS="True"
