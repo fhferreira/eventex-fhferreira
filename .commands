@@ -1,0 +1,61 @@
+Para Unix/Linux
+Ps.: Se você é usuário de Windows, faça um favor a si próprio e instale um Linux. Seja numa VBox ou Dual Boot. Mas faça!
+Ubuntu, Kubuntu, Lubuntu, OpenSuse, Debian... Todos são opções. :sunglasses:
+
+1 - Configure sua máquina:
+$sudo [seu gerenciador de pacotes] make build-essential libssl-dev zlib1g-dev libbz2-dev libsqlite3-dev wget curl llvm libncurses5-dev git
+
+2 - Crie o seu diretório de trabalho
+$ mkdir wttd && cd wttd
+
+3- Configure seu Environment
+$ python -m venv .wttd
+
+4- Ative seu Environment
+$ source .wttd/bin/activate
+
+5 - Instale o Django
+$ pip install django
+
+6 - Crie seu projeto Django:
+$ django-admin startproject eventex .
+
+7 - Crie o alias para o manage.py
+$ cd eventex
+$ alias manage='python $VIRTUAL_ENV/../manage.py'
+
+8 - Iniciando seu projeto Django
+$ manage startapp core
+
+9 - Instale o Heroku
+Tenha certeza que você tenha o Ruby instalado, senão dá erro no Heroku.
+$ sudo [seu gerenciador de pacotes] heroku
+Também instale o pacote:
+heroku plugins:install heroku-config 
+Para você ser capaz de realizar alguns dos comandos como config:push. Esse foi um dos erros que tive durante o push dos arquivos para o servidor.
+
+10 - Instale o toolbelt:
+$ wget -qO- https://toolbelt.heroku.com/install.sh | sh
+
+11 - Adicione o Heroku no $PATH seu configurador do shell. Assim como o Henrique mostrou no caso do PyEnv. Como eu uso ZSH como shell, no meu caso é o arquivo ~/.zshrc
+Você te que adicionar essa parte: "/usr/local/heroku/bin" ao final da sua variável de ambiente $PATH, preste atenção para não ferrar com o $PATH do sistema e quebrar tudo. 
+No caso o resultado final deve ser parecido com isso:
+
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/usr/local/heroku/bin"
+
+12 - Depois de ter criado sua conta no www.heroku.com, você precisa configurar sua conta localmente, então faça:
+$ heroku login
+Digite seu email e login para a autenticação.
+
+13 - Crie seu app no Heroku:
+heroku apps:create eventex-[seunomeaquisemoscolchetes]
+
+14 - Pacotes/Plugins extras:
+$ pip install python-decouple
+$ pip install dj-database-url
+$pip install dj-static
+$pip install gunicorn
+$pip install psycopg2 <- para instalar esse plugin, tenha certeza que vc instalou o postgreSQL
+
+15 - Salve os requirements da aplicação, este arquivo dever ser criado dentro da pasta wttd.
+$ pip freeze > requirements.txt
