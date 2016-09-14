@@ -25,7 +25,7 @@ def subscribe_create(request):
 
     # Send email
     _send_mail(
-        'Confirmação de inscrição',
+        u'Confirmação de inscrição',
         settings.DEFAULT_FROM_EMAIL,
         form.cleaned_data['email'],
         'subscriptions/subscription_email.txt',
@@ -33,7 +33,7 @@ def subscribe_create(request):
     )
 
     # Success feedback
-    messages.success(request, 'Inscrição realizada com sucesso!')
+    messages.success(request, u'Inscrição realizada com sucesso!')
 
     return HttpResponseRedirect('/inscricao/')
 
