@@ -1,5 +1,4 @@
 from django.conf import settings
-from django.contrib import messages
 from django.core import mail
 from django.http import Http404
 from django.http import HttpResponseRedirect
