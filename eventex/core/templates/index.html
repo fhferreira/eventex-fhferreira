@@ -39,17 +39,17 @@
             <header class="header header-inline min-h-3 row desktop-12 container" role="banner">
 
                 <div class="site-logo">
-                    <h1><a href="/" rel="home">Eventex</a></h1>
+                    <h1><a href="{% url 'home' %}" rel="home">Eventex</a></h1>
                     <p class="site-description screen-reader-only">O maior encontro hacker do mundo!</p>
                 </div>
 
                 <nav class="nav-inline" role="navigation">
                     <a href="javascript:void(0);" class="nav-mobile"><i class="fa fa-bars"></i></a>
                     <ul>
-                        <li><a data-scroll href="#overview">Conferência</a></li>
-                        <li><a data-scroll href="#sponsors">Patrocinadores</a></li>
-                        <li><a data-scroll href="#register">Inscrição</a></li>
-                        <li><a data-scroll href="#venue">Local</a></li>
+                        <li><a data-scroll href="{% url 'home' %}#overview">Conferência</a></li>
+                        <li><a data-scroll href="{% url 'home' %}#sponsors">Patrocinadores</a></li>
+                        <li><a data-scroll href="{% url 'home' %}#register">Inscrição</a></li>
+                        <li><a data-scroll href="{% url 'home' %}#venue">Local</a></li>
                     </ul>
                 </nav>
 
@@ -70,7 +70,7 @@
             	<i class="fa fa-5x fa-globe"></i>
             	<h2>A Conferência</h2>
                 <p class="lead">A maior reunião de hackers do mundo.<br>Reunindo profissionais e entusiastas dos quatro <br>cantos do planeta, o <em>Eventex</em> é o lugar onde você precisa estar.</p>
-            	<p><a class="btn-basic btn-blue" data-scroll href="#register">Garanta a sua vaga!</a></p>
+            	<p><a class="btn-basic btn-blue" data-scroll href="{% url 'home' %}#register">Garanta a sua vaga!</a></p>
             </div>
         </section>
 
@@ -112,7 +112,7 @@
                 	<h2>Inscrição</h2>
                 	<h3>Inscrições abertas!</h3>
                     <p>Fique à vontade para entrar em contato com a gente.<br>Teremos prazer em responder quaisquer dúvidas.</p>
-                	<a class="btn-basic btn-blue" href="/inscricao/">Inscreva-se já!</a>
+                	<a class="btn-basic btn-blue" href="{% url 'subscriptions:new' %}">Inscreva-se já!</a>
                 </div>
             </div>
         </section>
