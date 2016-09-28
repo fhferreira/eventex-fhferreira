@@ -1,5 +1,6 @@
 from django import forms
 from django.core.exceptions import ValidationError
+from django.template.defaultfilters import title
 
 
 def validate_cpf(value):
@@ -16,3 +17,5 @@ class SubscriptionForm(forms.Form):
     email = forms.EmailField(label="Email")
     phone = forms.CharField(label="Telefone")
 
+    def clean_name(self):
+        return title(self.cleaned_data['name'])
